@@ -1,12 +1,12 @@
 package hello.login.validation;
 
 import hello.login.domain.item.Item;
+import jakarta.validation.*;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
+import jakarta.validation.ValidatorFactory;
 import org.junit.jupiter.api.Test;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
 import java.util.Set;
 
 public class BeanValidationTest {
@@ -20,6 +20,7 @@ public class BeanValidationTest {
         item.setItemName("  ");
         item.setPrice(0);
         item.setQuantity(10000);
+
 
         Set<ConstraintViolation<Item>> violations = validator.validate(item);
         for (ConstraintViolation<Item> violation : violations) {
