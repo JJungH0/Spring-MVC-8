@@ -27,7 +27,7 @@ public class SessionInfoController {
                 .forEachRemaining(name -> log.info("session name = {}, value = {}", name, session.getAttribute(name)));
 
         log.info("sessionID = {}",session.getId());
-        log.info("sessionID = {}",session.getMaxInactiveInterval());
+        log.info("inactiveInterval = {}",session.getMaxInactiveInterval());
         log.info("creationTime = {}", new Date(session.getCreationTime()));
         log.info("lastAccessedTime = {}", new Date(session.getLastAccessedTime()));
         log.info("isNew = {}", session.isNew());
